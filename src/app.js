@@ -11,6 +11,8 @@ const __dirname = resolve(__filename, "..");
 //rotas
 import homeRoutes from "./routes/home.js";
 import alunoRoutes from "./routes/aluno.js";
+import livroRoutes from "./routes/livros.js";
+
 class App {
   constructor() {
     this.app = express();
@@ -43,6 +45,7 @@ class App {
   routes() {
     this.app.use("/", homeRoutes);
     this.app.use("/alunos", alunoRoutes);
+    this.app.use("/livros", livroRoutes);
   }
 }
 
