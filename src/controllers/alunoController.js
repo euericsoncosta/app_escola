@@ -2,7 +2,7 @@ class Aluno {
   static matriculaGeral = 0;
 
   constructor(nome, idade, nota) {
-    this.matricula = Aluno.matriculaGeral++;
+    this.matricula = ++Aluno.matriculaGeral;
     this.nome = nome;
     this.idade = idade;
     this.nota = nota;
