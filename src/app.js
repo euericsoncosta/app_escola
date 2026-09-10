@@ -12,6 +12,7 @@ const __dirname = resolve(__filename, "..");
 import homeRoutes from "./routes/home.js";
 import alunoRoutes from "./routes/aluno.js";
 import livroRoutes from "./routes/livros.js";
+import emprestimoRoutes from "./routes/emprestimo.js";
 
 class App {
   constructor() {
@@ -29,7 +30,7 @@ class App {
     this.app.use(methodOverride("_method"));
 
     // Define a pasta de arquivos estáticos
-    this.app.use(express.static(resolve(__dirname, "public"))); //quando for usar arquivos estáticos, como imagens, css, js, etc.
+    this.app.use(express.static(resolve(__dirname, `..`, "public"))); //quando for usar arquivos estáticos, como imagens, css, js, etc.
   }
   views() {
     this.app.engine(
@@ -46,6 +47,7 @@ class App {
     this.app.use("/", homeRoutes);
     this.app.use("/alunos", alunoRoutes);
     this.app.use("/livros", livroRoutes);
+    this.app.use("/emprestimos", emprestimoRoutes);
   }
 }
 

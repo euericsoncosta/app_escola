@@ -26,5 +26,5 @@ class AlunoController {
     res.redirect("/alunos");
   }
 }
-
+export { alunos }; //fiz hj
 export default new AlunoController();

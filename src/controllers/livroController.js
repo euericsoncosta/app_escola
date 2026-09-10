@@ -25,4 +25,6 @@ class livroController {
   }
 }
 
+export { livros }; //fiz hj
+
 export default new livroController();
