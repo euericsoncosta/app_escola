@@ -52,6 +52,20 @@ class EmprestimoController {
     emprestimos.push(emprestimo);
     return res.redirect("/emprestimos");
   }
+  devolverEmprestimo(req, res) {
+    const { id } = req.params;
+    console.log("ID do empréstimo a ser devolvido:", id);
+    const i = emprestimos.findIndex(
+      (emprestimo) => emprestimo.id_emprestimo === Number(id),
+    );
+    if (i === -1) {
+      return res.redirect("/emprestimos");
+    }
+    emprestimos[i].livro.disponivel = true;
+
+    emprestimos.splice(i, 1);
+    return res.redirect("/emprestimos");
+  }
 }
 
 export { emprestimos };
